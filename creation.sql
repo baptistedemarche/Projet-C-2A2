@@ -22,4 +22,8 @@ CREATE TABLE 2acLawyer(
 	pwd CHAR(60),
 	createDate DATE,
 	token VARCHAR(25),
+	class INTEGER,
+	FOREIGN KEY class REFERENCES 2acClass(idClass),
+	schedule INTEGER NOT NULL,
+	FOREIGN KEY class REFERENCES 2acSchedule(schedule),
 );
