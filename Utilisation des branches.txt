@@ -1,0 +1,4 @@
+Utilisation des branches:
+-   SQL -> Tous les scripts SQL nécessaires tels que la création de la BDD, Insertion d'un premier jeu de donnée.
+-   Source -> Tout le code source commes les includes les fonctions
+-   
