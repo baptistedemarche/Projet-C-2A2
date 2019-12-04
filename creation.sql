@@ -24,8 +24,8 @@ CREATE TABLE 2acLawyer(
 	token VARCHAR(25),
 	class INTEGER,
 	schedule INTEGER NOT NULL,
-	FOREIGN KEY class REFERENCES 2acClass(idClass),
-	FOREIGN KEY schedule REFERENCES 2acSchedule(idSchedule)
+	FOREIGN KEY (class) REFERENCES 2acClass(idClass),
+	FOREIGN KEY (schedule) REFERENCES 2acSchedule(idSchedule)
 );
 
 CREATE TABLE 2acContractType(
@@ -43,7 +43,7 @@ CREATE TABLE 2acClient(
 	createDate DATE,
 	token VARCHAR(25),
 	contract INTEGER NOT NULL,
-	FOREIGN KEY contract REFERENCES 2acContractType(idContract)
+	FOREIGN KEY (contract) REFERENCES 2acContractType(idContract)
 );
 
 CREATE TABLE 2acMeeting(
@@ -58,14 +58,14 @@ CREATE TABLE 2acContact(
 	idContact INTEGER PRIMARY KEY AUTO_INCREMENT,
 	meeting INTEGER,
 	client INTEGER,
-	FOREIGN KEY meeting REFERENCES 2acMeeting(idMeeting),
-	FOREIGN KEY client REFERENCES 2acClient(idClient)
+	FOREIGN KEY (meeting) REFERENCES 2acMeeting(idMeeting),
+	FOREIGN KEY (client) REFERENCES 2acClient(idClient)
 );
 
 CREATE TABLE 2acMeet(
 	idMeet INTEGER PRIMARY KEY AUTO_INCREMENT,
 	meeting INTEGER,
 	lawyer INTEGER,
-	FOREIGN KEY meeting REFERENCES 2acMeeting(idMeeting),
-	FOREIGN KEY lawyer REFERENCES 2acLawyer(idLawyer)
+	FOREIGN KEY (meeting) REFERENCES 2acMeeting(idMeeting),
+	FOREIGN KEY (lawyer) REFERENCES 2acLawyer(idLawyer)
 );
