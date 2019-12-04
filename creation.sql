@@ -3,19 +3,19 @@ CREATE DATABASE projetc2a2;
 USE projetc2a2;
 
 CREATE TABLE 2acClass(
-	idClass INTEGER PRIMARY KEY,
+	idClass INTEGER PRIMARY KEY AUTO_INCREMENT,
 	job VARCHAR(100),
 	price FLOAT
 );
 
 CREATE TABLE 2acSchedule(
-	idSchedule INTEGER PRIMARY KEY,
+	idSchedule INTEGER PRIMARY KEY AUTO_INCREMENT,
 	beginHour VARCHAR(10),
 	endHour VARCHAR(10)
 );
 
 CREATE TABLE 2acLawyer(
-	idLawyer INTEGER PRIMARY KEY,
+	idLawyer INTEGER PRIMARY KEY AUTO_INCREMENT,
 	lastName VARCHAR(150),
 	firstname VARCHAR(150),
 	emailAddress VARCHAR(320),
@@ -29,13 +29,13 @@ CREATE TABLE 2acLawyer(
 );
 
 CREATE TABLE 2acContractType(
-	idContract INTEGER PRIMARY KEY,
+	idContract INTEGER PRIMARY KEY AUTO_INCREMENT,
 	name VARCHAR(100),
 	type VARCHAR(100)
 );
 
 CREATE TABLE 2acClient(
-	idClient INTEGER PRIMARY KEY,
+	idClient INTEGER PRIMARY KEY AUTO_INCREMENT,
 	lastName VARCHAR(150),
 	firstname VARCHAR(150),
 	emailAddress VARCHAR(320),
@@ -47,7 +47,7 @@ CREATE TABLE 2acClient(
 );
 
 CREATE TABLE 2acMeeting(
-	idMeeting INTEGER PRIMARY KEY,
+	idMeeting INTEGER PRIMARY KEY AUTO_INCREMENT,
 	type VARCHAR(200),
 	date DATE,
 	description TEXT,
@@ -55,7 +55,7 @@ CREATE TABLE 2acMeeting(
 );
 
 CREATE TABLE 2acContact(
-	idContact INTEGER PRIMARY KEY,
+	idContact INTEGER PRIMARY KEY AUTO_INCREMENT,
 	meeting INTEGER,
 	client INTEGER,
 	FOREIGN KEY meeting REFERENCES 2acMeeting(idMeeting),
@@ -63,7 +63,7 @@ CREATE TABLE 2acContact(
 );
 
 CREATE TABLE 2acMeet(
-	idMeet INTEGER PRIMARY KEY,
+	idMeet INTEGER PRIMARY KEY AUTO_INCREMENT,
 	meeting INTEGER,
 	lawyer INTEGER,
 	FOREIGN KEY meeting REFERENCES 2acMeeting(idMeeting),
